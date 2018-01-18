@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  txtEn = '';
+  txtVn = '';
   words: Word[] = [
     { en: 'one', vn: 'mot', isMemorized: true },
     { en: 'two', vn: 'hai', isMemorized: false },
@@ -13,9 +15,17 @@ export class AppComponent {
   ];
   styleMemorized = { color: 'green', fontWeight: 'normal' };
   styleNotMemorized = { color: 'red', fontWeight: 'bold' };
+
   getClasses(word: Word) {
     if (word.isMemorized) return { daNho: true, chuaNho: false };
     return { daNho: false, chuaNho: true };
+  }
+
+  addWord() {
+    const word: Word = { isMemorized: false, vn: this.txtVn, en: this.txtEn };
+    this.words.push(word);
+    this.txtEn = '';
+    this.txtVn = '';
   }
 }
 

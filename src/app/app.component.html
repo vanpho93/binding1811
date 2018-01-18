@@ -1,3 +1,6 @@
+<input placeholder="English" [(ngModel)]="txtEn">
+<input placeholder="Vietnamese" [(ngModel)]="txtVn">
+<button (click)="addWord();">Add</button>
 <div *ngFor="let word of words">
   <h3 [ngStyle]="word.isMemorized ? styleMemorized : styleNotMemorized">
     {{ word.en }}
@@ -14,6 +17,3 @@
   </p>
   <button (click)="word.isMemorized = !word.isMemorized">Toggle</button>
 </div>
-<input type="text">
-<input type="text">
-<button>Add</button>
