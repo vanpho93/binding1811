@@ -1,19 +1,20 @@
 <input placeholder="English" [(ngModel)]="txtEn">
 <input placeholder="Vietnamese" [(ngModel)]="txtVn">
 <button (click)="addWord();">Add</button>
+<br>
+<br>
+<button (click)="mode = 1">SHOW ALL</button>
+<button (click)="mode = 2">SHOW DA NHO</button>
+<button (click)="mode = 3">SHOW CHUA NHO</button>
 <div *ngFor="let word of words">
-  <h3 [ngStyle]="word.isMemorized ? styleMemorized : styleNotMemorized">
-    {{ word.en }}
-  </h3>
-  <!-- <p [class]="word.isMemorized ? 'daNho' : 'chuaNho'">{{ word.vn }}</p> -->
-  <!-- <p
-    [class.daNho]="word.isMemorized"
-    [class.chuaNho]="!word.isMemorized"
-  >
-    {{ word.vn }}
-  </p>-->
-  <p [ngClass]="getClasses(word)">
-    {{ word.vn }}
-  </p>
-  <button (click)="word.isMemorized = !word.isMemorized">Toggle</button>
+  <div *ngIf="shouldShowWord(word)">
+    <h3 [ngStyle]="word.isMemorized ? styleMemorized : styleNotMemorized">
+      {{ word.en }}
+    </h3>
+    <p [ngClass]="getClasses(word)">
+      {{ word.vn }}
+    </p>
+    <button (click)="word.isMemorized = !word.isMemorized">Toggle</button>
+    <button (click)="removeWord(word);">Remove</button>
+  </div>
 </div>

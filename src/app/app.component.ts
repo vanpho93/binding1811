@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   txtEn = '';
   txtVn = '';
+  mode = 1;
   words: Word[] = [
     { en: 'one', vn: 'mot', isMemorized: true },
     { en: 'two', vn: 'hai', isMemorized: false },
@@ -26,6 +27,18 @@ export class AppComponent {
     this.words.push(word);
     this.txtEn = '';
     this.txtVn = '';
+  }
+
+  removeWord(word: Word) {
+    const index = this.words.findIndex(w => w.en === word.en);
+    // const index = this.words.indexOf(word);
+    this.words.splice(index, 1);
+  }
+
+  shouldShowWord(word: Word) {
+    if (this.mode === 1) return true;
+    if (this.mode === 2 && word.isMemorized) return true;
+    return this.mode === 3 && !word.isMemorized;
   }
 }
 
