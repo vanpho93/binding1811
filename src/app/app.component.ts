@@ -13,6 +13,10 @@ export class AppComponent {
   ];
   styleMemorized = { color: 'green', fontWeight: 'normal' };
   styleNotMemorized = { color: 'red', fontWeight: 'bold' };
+  getClasses(word: Word) {
+    if (word.isMemorized) return { daNho: true, chuaNho: false };
+    return { daNho: false, chuaNho: true };
+  }
 }
 
 interface Word {
