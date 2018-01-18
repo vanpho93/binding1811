@@ -1,0 +1,6 @@
+<div *ngFor="let word of words">
+  <h3 [ngStyle]="word.isMemorized ? styleMemorized : styleNotMemorized">
+      {{ word.en }}
+  </h3>
+  <p>{{ word.vn }}</p>
+</div>
