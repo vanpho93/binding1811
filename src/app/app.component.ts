@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Word } from './types';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,6 @@ export class AppComponent {
     { en: 'two', vn: 'hai', isMemorized: false },
     { en: 'three', vn: 'ba', isMemorized: true }
   ];
-}
-
-interface Word {
-  en: string;
-  vn: string;
-  isMemorized: boolean;
 }
 
 /*
