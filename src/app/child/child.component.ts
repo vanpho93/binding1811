@@ -6,7 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent {
-  @Output() myClickIncrease = new EventEmitter();
-  @Output() myClickDescrease = new EventEmitter();
-  @Output() myClickReset = new EventEmitter();
+  @Output() onIncrease = new EventEmitter();
+  @Output() onDescrease = new EventEmitter();
+  @Output() onReset = new EventEmitter();
+  increase() { this.onIncrease.emit(); }
+  descrease() { this.onDescrease.emit(); }
+  reset() { this.onReset.emit(); }
 }
