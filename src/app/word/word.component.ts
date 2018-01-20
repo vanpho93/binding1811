@@ -10,4 +10,9 @@ export class WordComponent {
   // @Input() en: string;
   // @Input() vn: string;
   @Input() word: Word;
+  @Input() words: Word[];
+
+  toggle() {
+    this.word.isMemorized = !this.word.isMemorized;
+  }
 }

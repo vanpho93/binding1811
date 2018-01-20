@@ -1,4 +1,6 @@
 <div>
-  <h3>{{ word.en }}</h3>
+  <h3 [style.color]="word.isMemorized ? 'green' : 'red'">{{ word.en }}</h3>
   <p>{{ word.vn }}</p>
+  <button (click)="toggle()">Toggle</button>
+  <button>Remove</button>
 </div>
