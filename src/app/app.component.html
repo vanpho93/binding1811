@@ -1,4 +1,4 @@
-<!-- <div *ngFor="let word of words">
-    <app-word [word]="word"></app-word>
-</div> -->
-<app-parent></app-parent>
+<div *ngFor="let word of words">
+    <app-word [word]="word" (onRemove)="onRemove($event);"></app-word>
+</div>
+<!-- <app-parent></app-parent> -->

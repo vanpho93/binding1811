@@ -12,6 +12,11 @@ export class AppComponent {
     { en: 'two', vn: 'hai', isMemorized: false },
     { en: 'three', vn: 'ba', isMemorized: true }
   ];
+
+  onRemove(word: Word) {
+    const index = this.words.indexOf(word);
+    this.words.splice(index, 1);
+  }
 }
 
 /*

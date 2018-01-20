@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Word } from '../types';
 
 @Component({
@@ -11,8 +11,11 @@ export class WordComponent {
   // @Input() vn: string;
   @Input() word: Word;
   @Input() words: Word[];
-
+  @Output() onRemove = new EventEmitter();
   toggle() {
     this.word.isMemorized = !this.word.isMemorized;
+  }
+  remove() {
+    this.onRemove.emit(this.word);
   }
 }
