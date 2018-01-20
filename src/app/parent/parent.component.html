@@ -1,6 +1,6 @@
 <p>{{ value }}</p>
 <app-child
-  (onIncrease)="onIncrease();"
+  (onIncrease)="onIncrease($event);"
   (onDescrease)="onDescrease();"
   (onReset)="onReset();"
 ></app-child>

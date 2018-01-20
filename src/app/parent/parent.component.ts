@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent {
   value = 1;
 
-  onIncrease() { this.value++; }
+  onIncrease(x) { x ? this.value += x : this.value++; }
   onDescrease() { this.value--; }
   onReset() { this.value = 1; }
 }

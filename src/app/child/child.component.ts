@@ -9,7 +9,7 @@ export class ChildComponent {
   @Output() onIncrease = new EventEmitter();
   @Output() onDescrease = new EventEmitter();
   @Output() onReset = new EventEmitter();
-  increase() { this.onIncrease.emit(); }
+  increase(y) { this.onIncrease.emit(y); }
   descrease() { this.onDescrease.emit(); }
   reset() { this.onReset.emit(); }
 }
