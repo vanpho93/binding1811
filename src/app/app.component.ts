@@ -14,6 +14,14 @@ export class AppComponent {
     { en: 'three', vn: 'ba', isMemorized: true }
   ];
 
+  get filteredWords() {
+    return this.words.filter(word => {
+      if (this.showMode === 'SHOW_ALL') return true;
+      if (this.showMode === 'SHOW_MEMORIZED') return word.isMemorized;
+      return !word.isMemorized;
+    });
+  }
+
   onRemove(word: Word) {
     const index = this.words.indexOf(word);
     this.words.splice(index, 1);

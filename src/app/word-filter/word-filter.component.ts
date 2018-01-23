@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ShowMode } from '../types';
 
 @Component({
@@ -9,9 +9,9 @@ import { ShowMode } from '../types';
 
 export class WordFilterComponent implements OnInit {
   @Output() onChangeMode = new EventEmitter<ShowMode>();
+  @Input() showMode: ShowMode;
   constructor() { }
 
   ngOnInit() {
   }
-
 }

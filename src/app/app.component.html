@@ -1,6 +1,6 @@
-<app-word-filter (onChangeMode)="onChangeMode($event)"></app-word-filter>
+<app-word-filter [showMode]="showMode" (onChangeMode)="onChangeMode($event)"></app-word-filter>
 <p>Show mode: {{ showMode }}</p>
-<div *ngFor="let word of words">
+<div *ngFor="let word of filteredWords">
     <app-word [word]="word" (onRemove)="onRemove($event);"></app-word>
 </div>
 <!-- <app-parent></app-parent> -->
