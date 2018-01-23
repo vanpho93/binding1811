@@ -7,11 +7,8 @@ import { Word } from '../types';
   styleUrls: ['./word.component.css']
 })
 export class WordComponent {
-  // @Input() en: string;
-  // @Input() vn: string;
   @Input() word: Word;
-  @Input() words: Word[];
-  @Output() onRemove = new EventEmitter();
+  @Output() onRemove = new EventEmitter<Word>();
   toggle() {
     this.word.isMemorized = !this.word.isMemorized;
   }

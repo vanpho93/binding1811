@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { WordFilterComponent } from './word-filter/word-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WordComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    WordFilterComponent
   ],
   imports: [
     BrowserModule,
