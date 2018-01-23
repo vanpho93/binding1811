@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Word } from './types';
+import { Word, ShowMode } from './types';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,7 @@ import { Word } from './types';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  showMode: ShowMode = 'SHOW_ALL';
   words: Word[] = [
     { en: 'one', vn: 'mot', isMemorized: true },
     { en: 'two', vn: 'hai', isMemorized: false },
@@ -17,6 +18,8 @@ export class AppComponent {
     const index = this.words.indexOf(word);
     this.words.splice(index, 1);
   }
+
+  onChangeMode(showMode: ShowMode) { this.showMode = showMode; }
 }
 
 /*
