@@ -10,14 +10,15 @@ export class WordFormComponent implements OnInit {
   @Output() onAddWord = new EventEmitter<Word>();
   txtEn = '';
   txtVn = '';
+  checkIsMemorized = true;
   constructor() { }
 
   ngOnInit() {
   }
 
   addWord() {
-    const { txtEn, txtVn } = this;
-    const word: Word = { en: txtEn, vn: txtVn, isMemorized: false };
+    const { txtEn, txtVn, checkIsMemorized } = this;
+    const word: Word = { en: txtEn, vn: txtVn, isMemorized: checkIsMemorized };
     this.txtEn = '';
     this.txtVn = '';
     this.onAddWord.emit(word);
