@@ -1,18 +1,7 @@
 <button
-    (click)="onChangeMode.emit('SHOW_ALL')"
-    [style.fontWeight]="showMode === 'SHOW_ALL' ? 'bold' : '400'"
-    [disabled]="showMode === 'SHOW_ALL'">
-    Show all
+    *ngFor="let option of options"
+    (click)="onChangeMode.emit(option)" [style.fontWeight]="showMode === option ? 'bold' : '400'"
+    [disabled]="showMode === option">
+    {{ option }}
 </button>
-<button
-    (click)="onChangeMode.emit('SHOW_MEMORIZED')"
-    [style.fontWeight]="showMode === 'SHOW_MEMORIZED' ? 'bold' : '400'"
-    [disabled]="showMode === 'SHOW_MEMORIZED'">
-    Show memorized
-</button>
-<button
-    (click)="onChangeMode.emit('SHOW_FORGOT')"
-    [style.fontWeight]="showMode === 'SHOW_FORGOT' ? 'bold' : '400'"
-    [disabled]="showMode === 'SHOW_FORGOT'">
-    Show forgot
-</button>
+<br><br>

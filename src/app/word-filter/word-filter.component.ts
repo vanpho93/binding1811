@@ -10,6 +10,7 @@ import { ShowMode } from '../types';
 export class WordFilterComponent implements OnInit {
   @Output() onChangeMode = new EventEmitter<ShowMode>();
   @Input() showMode: ShowMode;
+  options: ShowMode[] = ['SHOW_ALL', 'SHOW_FORGOT', 'SHOW_MEMORIZED'];
   constructor() { }
 
   ngOnInit() {
