@@ -1,5 +1,5 @@
 <app-word-filter [showMode]="showMode" (onChangeMode)="onChangeMode($event)"></app-word-filter>
-<app-word-form></app-word-form>
+<app-word-form (onAddWord)="onAddWord($event)"></app-word-form>
 <div *ngFor="let word of filteredWords">
     <app-word [word]="word" (onRemove)="onRemove($event);"></app-word>
 </div>

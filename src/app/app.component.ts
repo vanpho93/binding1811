@@ -28,6 +28,10 @@ export class AppComponent {
   }
 
   onChangeMode(showMode: ShowMode) { this.showMode = showMode; }
+
+  onAddWord(word: Word) {
+    this.words.unshift(word);
+  }
 }
 
 /*

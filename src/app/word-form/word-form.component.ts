@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Word } from '../types';
 
 @Component({
   selector: 'app-word-form',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./word-form.component.css']
 })
 export class WordFormComponent implements OnInit {
-
+  @Output() onAddWord = new EventEmitter<Word>();
+  txtEn = '';
+  txtVn = '';
   constructor() { }
 
   ngOnInit() {
   }
 
+  addWord() {
+    const { txtEn, txtVn } = this;
+    const word: Word = { en: txtEn, vn: txtVn, isMemorized: false };
+    this.txtEn = '';
+    this.txtVn = '';
+    this.onAddWord.emit(word);
+  }
 }
