@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Word } from '../types';
+import { WordService } from '../word.service';
 
 @Component({
   selector: 'app-word',
@@ -9,10 +10,15 @@ import { Word } from '../types';
 export class WordComponent {
   @Input() word: Word;
   @Output() onRemove = new EventEmitter<Word>();
+  constructor(private wordService: WordService) {}
+
   toggle() {
     this.word.isMemorized = !this.word.isMemorized;
   }
   remove() {
-    this.onRemove.emit(this.word);
+    this.wordService.removeWord(this.word._id)
+    .then(() => {
+      this.onRemove.emit(this.word);
+    });
   }
 }
